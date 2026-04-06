@@ -1,96 +1,70 @@
-﻿# analise_dados_tic_2025
-1. Visão Geral do Projeto
-Este documento detalha a metodologia de geração, processamento e análise estatística do dataset sintético baseado na metodologia "TIC Kids Online Brasil". O objetivo é avaliar a exposição a riscos digitais, o nível de conhecimento em cibersegurança e o comportamento de usuários entre 7 e 16 anos para fundamentar a implementação da solução educacional "Escudo Digital".
+﻿Análise de Dados: TIC Kids Online Brasil 2025 – Projeto Escudo Digital
+Sobre o Projeto
+Este repositório contém a análise estatística e o processamento de dados baseados na metodologia TIC Kids Online Brasil. O estudo visa mapear a vulnerabilidade de crianças e adolescentes (7 a 16 anos) no ambiente digital, servindo como base analítica para o desenvolvimento do Escudo Digital, uma solução educacional voltada à cibersegurança.
 
-2. Metodologia de Geração de Dados
-O conjunto de dados foi gerado programaticamente utilizando as bibliotecas Pandas e NumPy.
+Tecnologias Utilizadas
+Linguagem: Python 3.x
 
-2.1 Estrutura do Dataset
-Amostra: 2.500 respondentes.
+Bibliotecas de Análise: Pandas, NumPy
 
-Distribuição Geográfica: 10 estados brasileiros com pesos populacionais distintos (Destaque para SP com 22% e RJ com 12%).
+Visualização de Dados: Matplotlib, Seaborn
 
-Segmentação Etária: 5 grupos (7-8, 9-10, 11-12, 13-14, 15-16 anos), com maior concentração (60%) nas faixas acima de 13 anos.
+Metodologia: Análise Quantitativa e Probabilística
 
-Classe Econômica: Distribuição conforme critérios A, B1, B2, C e D/E.
+Metodologia de Dados
+O dataset processado conta com 2.500 respondentes sintéticos, modelados com base em distribuições reais de demografia e comportamento digital:
 
-2.2 Modelagem de Probabilidades
-As variáveis foram geradas utilizando distribuições estatísticas específicas:
+Distribuição Geográfica: Representação de 10 estados brasileiros com pesos populacionais reais.
 
-Binomial: Para variáveis de ocorrência (riscos sofridos e comportamentos de segurança).
+Segmentação Etária: 5 grupos distintos (7-8, 9-10, 11-12, 13-14 e 15-16 anos).
 
-Normal: Para o tempo de uso diário (Média: 5h, Desvio Padrão: 2h) e cálculo do score de conhecimento.
+Modelagem Estatística: Uso de distribuições Binomiais para eventos de risco e distribuições Normais para métricas de tempo de uso e score de conhecimento.
 
-3. Definição de Variáveis e Métricas
-3.1 Indicadores de Risco (Exposição)
-Foram mapeadas seis categorias de incidentes críticos:
+Indicadores Analisados
+A análise foca em quatro pilares fundamentais:
 
-Recebimento de mensagens de estranhos.
+Exposição a Riscos: Mensagens de estranhos, links suspeitos (phishing), compartilhamento de dados, cyberbullying, conteúdo inapropriado e golpes.
 
-Acesso a links suspeitos (phishing).
+Comportamentos de Segurança: Uso de senhas fortes, verificação de privacidade e uso de ferramentas de proteção.
 
-Compartilhamento inadvertido de dados pessoais.
+Score de Conhecimento: Uma métrica composta (0-100) que avalia a proficiência técnica do usuário em segurança digital.
 
-Exposição a cyberbullying.
+Perfil de Risco: Classificação algorítmica dos usuários em níveis (Crítico, Alto, Médio e Baixo).
 
-Visualização de conteúdo inapropriado.
+Como Executar
+Clone o repositório:
 
-Vítimas de golpes financeiros/digitais.
+Bash
+git clone https://github.com/seu-usuario/nome-do-repositorio.git
+Instale as dependências:
 
-3.2 Score de Conhecimento
-O desempenho técnico do usuário é calculado em uma escala de 0 a 100, ponderando quatro pilares (25 pontos cada):
+Bash
+pip install pandas numpy matplotlib seaborn
+Execute o script de análise:
 
-Capacidade de reconhecimento de golpes.
+Bash
+python analise_tic_kids.py
 
-Uso de credenciais (senhas) fortes.
+Estrutura de Saída
+O script gera automaticamente os seguintes arquivos para suporte à decisão:
 
-Verificação de configurações de privacidade.
+tic_kids_dataset_completo.csv: Base de dados bruta.
 
-Uso de ferramentas de proteção (Antivírus).
+tic_kids_resumo_por_idade.csv: Agrupamento estatístico por faixa etária.
 
-4. Análise de Resultados Estatísticos
-4.1 Comportamento por Faixa Etária
-A análise demonstra uma correlação direta entre o aumento da idade e a exposição a riscos. Enquanto o score de conhecimento tende a crescer com a maturidade, a frequência de cliques em links suspeitos e recebimento de mensagens estranhas atinge o pico na faixa de 15-16 anos, sugerindo que o aumento do tempo de exposição supera a curva de aprendizado técnico.
+tic_kids_alunos_criticos.csv: Lista de usuários identificados em situação de vulnerabilidade alta para intervenção prioritária.
 
-4.2 Segmentação de Perfil de Risco
-Os usuários foram classificados em quatro níveis baseados no cruzamento entre incidentes sofridos e score de conhecimento:
+tic_kids_online_2025_analise.png: Painel visual com 12 gráficos de indicadores-chave.
 
-CRÍTICO: Alta incidência de riscos (>= 3) e baixo conhecimento (< 30).
+🔍 Principais Insights
+Gap de Conhecimento: Identificou-se que a média de conhecimento está abaixo da meta de 50 pontos em faixas etárias iniciais.
 
-ALTO: Moderada incidência e conhecimento insuficiente.
+Fator de Exposição: O aumento da idade está correlacionado a uma maior exposição a conteúdos inapropriados e tentativas de phishing.
 
-MÉDIO: Presença de riscos ou conhecimento abaixo da meta (50 pontos).
+Eficácia Educacional: A análise de correlação confirma que o aumento no score de conhecimento reduz diretamente a taxa de sucesso de golpes sofridos.
 
-BAIXO: Baixa incidência de riscos e alto nível de proteção.
+Autor: [Seu Nome/Projeto Escudo Digital]
 
-5. Conclusões e Recomendações Estratégicas
-5.1 Gaps Identificados
-Meta de Conhecimento: A média geral de conhecimento situa-se abaixo da meta de 50 pontos em diversas segmentações, especialmente em classes econômicas D/E e faixas etárias mais baixas.
+Data: 06 de Abril de 2026
 
-Eficácia Preventiva: Identificou-se uma correlação negativa entre o uso de senhas fortes/antivírus e a quantidade de riscos sofridos, validando a eficácia educacional desses tópicos.
-
-5.2 Implementação do "Escudo Digital"
-Com base nos dados, a intervenção pedagógica deve priorizar:
-
-Engenharia Social: Tópico com maior deficit de reconhecimento entre usuários.
-
-Privacidade de Dados: Necessidade de reforço em todas as faixas etárias.
-
-Metodologia por Ciclos: * 7-12 anos: Foco em mecânicas visuais e conceitos básicos de perigo.
-
-13-16 anos: Análise crítica, desinformação e proteção de identidade digital.
-
-6. Estrutura de Exportação (Arquivos Gerados)
-Para fins de auditoria e intervenção local, o sistema exporta quatro relatórios:
-
-tic_kids_dataset_completo.csv: Dados brutos para análises externas.
-
-tic_kids_resumo_por_idade.csv: Médias agregadas por grupo etário.
-
-tic_kids_resumo_por_estado.csv: Distribuição geográfica de riscos e conhecimentos.
-
-tic_kids_alunos_criticos.csv: Lista para intervenção prioritária em ambiente educacional.
-
-Data da Análise: 06/04/2026
-
-Ferramentas: Python 3.x (Pandas, NumPy, Matplotlib, Seaborn)
+Status: Análise Concluída / Fase de Implementação de Piloto.
