@@ -1,71 +1,86 @@
-#﻿Análise de Dados: TIC Kids Online Brasil 2025 – Projeto Escudo Digital#
- 
-#Sobre o Projeto#
-Este repositório contém a análise estatística e o processamento de dados baseados na metodologia TIC Kids Online Brasil. O estudo visa mapear a vulnerabilidade de crianças e adolescentes (7 a 16 anos) no ambiente digital, servindo como base analítica para o desenvolvimento do Escudo Digital, uma solução educacional voltada à cibersegurança.
+Projeto de Análise de Dados: TIC Kids Online Brasil 2025
 
-Tecnologias Utilizadas
-Linguagem: Python 
+1. Descrição do Projeto
 
-Bibliotecas de Análise: Pandas, NumPy
+Este projeto consiste num pipeline de análise de dados voltado para o estudo do comportamento digital de crianças e adolescentes no Brasil. A análise baseia-se na geração e processamento de um dataset sintético de 2.500 respondentes, modelado com base na metodologia oficial da pesquisa TIC Kids Online. O objetivo central é fornecer subsídios analíticos para a implementação do sistema "Escudo Digital", focando em cibersegurança e mitigação de riscos online.
 
-Visualização de Dados: Matplotlib, Seaborn
+2. Estrutura do Dataset
 
-Metodologia: Análise Quantitativa e Probabilística
+O conjunto de dados é composto por variáveis demográficas e comportamentais geradas via distribuições estatísticas:
 
-Metodologia de Dados
-O dataset processado conta com 2.500 respondentes sintéticos, modelados com base em distribuições reais de demografia e comportamento digital:
+2.1 Dados Demográficos
 
-Distribuição Geográfica: Representação de 10 estados brasileiros com pesos populacionais reais.
+Estado: Abrangência em 10 estados brasileiros com pesos populacionais proporcionais.
 
-Segmentação Etária: 5 grupos distintos (7-8, 9-10, 11-12, 13-14 e 15-16 anos).
+Faixa Etária: Segmentação entre 7 e 16 anos, dividida em cinco grupos bienais.
 
-Modelagem Estatística: Uso de distribuições Binomiais para eventos de risco e distribuições Normais para métricas de tempo de uso e score de conhecimento.
+Classe Económica: Classificação baseada no critério Brasil (A, B1, B2, C, D/E).
 
-Indicadores Analisados
-A análise foca em quatro pilares fundamentais:
+Género: Distribuição binária para fins estatísticos de amostragem.
 
-Exposição a Riscos: Mensagens de estranhos, links suspeitos (phishing), compartilhamento de dados, cyberbullying, conteúdo inapropriado e golpes.
+2.2 Variáveis de Comportamento e Risco
 
-Comportamentos de Segurança: Uso de senhas fortes, verificação de privacidade e uso de ferramentas de proteção.
+Uso de Internet: Frequência e intensidade (horas/dia).
 
-Score de Conhecimento: Uma métrica composta (0-100) que avalia a proficiência técnica do usuário em segurança digital.
+Exposição a Riscos: Indicadores de phishing, cyberbullying, mensagens de estranhos e conteúdo inapropriado.
 
-Perfil de Risco: Classificação algorítmica dos usuários em níveis (Crítico, Alto, Médio e Baixo).
+Segurança Digital: Medição de hábitos como uso de senhas fortes, verificação de privacidade e uso de ferramentas de proteção.
 
-#Como Executar#
-Clone o repositório:
+3. Metodologia de Análise
 
-Bash
-git clone https://github.com/AlicySousaa/analise_dados_tic_2025.git
-Instale as dependências:
+A análise é dividida em quatro etapas principais:
 
-Bash
+Processamento e Limpeza: Conversão de tipos de dados e tratamento de outliers através de funções de clipagem do NumPy.
+
+Análise Exploratória (EDA): Cálculo de estatísticas descritivas e taxas de exposição por segmento.
+
+Modelagem de Score: Criação do "Score de Conhecimento", uma métrica ponderada de 0 a 100 baseada em comportamentos preventivos.
+
+Segmentação de Risco: Algoritmo de classificação que define o perfil de vulnerabilidade do utilizador (Crítico, Alto, Médio ou Baixo) cruzando incidentes sofridos com o nível de conhecimento.
+
+4. Requisitos de Software
+
+Para a execução deste ambiente de análise, são necessárias as seguintes dependências:
+
+Python 3.8 ou superior
+
+Pandas (Manipulação de dados)
+
+NumPy (Operações matemáticas e geração estatística)
+
+Matplotlib (Visualização de dados)
+
+Seaborn (Gráficos estatísticos avançados)
+
+5. Instruções de Execução
+
+Para replicar a análise, siga os comandos abaixo:
+
+# Instalação das dependências
 pip install pandas numpy matplotlib seaborn
-Execute o script de análise:
 
-Bash
-python analise_tic_kids.py
+# Execução do script de análise
+python main.py
 
-#Estrutura de Saída#
-O script gera automaticamente os seguintes arquivos para suporte à decisão:
 
-tic_kids_dataset_completo.csv: Base de dados bruta.
+6. Resultados e Artefatos Gerados
 
-tic_kids_resumo_por_idade.csv: Agrupamento estatístico por faixa etária.
+Ao final da execução, o sistema exporta os seguintes ficheiros para análise externa:
 
-tic_kids_alunos_criticos.csv: Lista de usuários identificados em situação de vulnerabilidade alta para intervenção prioritária.
+tic_kids_dataset_completo.csv: Base de dados bruta com todos os registos.
 
-tic_kids_online_2025_analise.png: Painel visual com 12 gráficos de indicadores-chave.
+tic_kids_resumo_por_idade.csv: Tabela agregada com indicadores por faixa etária.
 
-# Principais Insights#
-Gap de Conhecimento: Identificou-se que a média de conhecimento está abaixo da meta de 50 pontos em faixas etárias iniciais.
+tic_kids_alunos_criticos.csv: Subset contendo utilizadores em situação de vulnerabilidade extrema para intervenção direta.
 
-Fator de Exposição: O aumento da idade está correlacionado a uma maior exposição a conteúdos inapropriados e tentativas de phishing.
+tic_kids_online_2025_analise.png: Dashboard consolidado com 12 visualizações gráficas.
 
-Eficácia Educacional: A análise de correlação confirma que o aumento no score de conhecimento reduz diretamente a taxa de sucesso de golpes sofridos.
+7. Conclusões para o Escudo Digital
 
-Autor: [Alice ALves/Projeto Escudo Digital]
+A análise identificou que o conhecimento técnico não cresce na mesma proporção que a exposição aos riscos em faixas etárias mais elevadas. A recomendação técnica é a aplicação de trilhas de aprendizagem diferenciadas, focando em Engenharia Social para os grupos de 13-16 anos e em conceitos básicos de privacidade para o grupo de 7-12 anos.
 
-Data: 06 de Abril de 2026
+Responsável: Projeto Escudo Digital
 
-Status: Análise Concluída / Fase de Implementação de Piloto.
+Versão: 1.0.0
+
+Licença: Uso Interno / Educacional
