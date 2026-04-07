@@ -2,7 +2,7 @@
 
 Análise de segurança digital infantil no Brasil baseada em TIC Kids Online Brasil 2025.
 
-## 🎯 O que faz?
+## O que faz?
 
 - Gera dataset com 2.500 respondentes
 - Cria 12 gráficos de análise
@@ -10,7 +10,7 @@ Análise de segurança digital infantil no Brasil baseada em TIC Kids Online Bra
 - Gera relatório executivo
 - Identifica alunos em risco
 
-## 🚀 Como usar?
+##  Como usar?
 
 ### 1. Instale as dependências
 ```bash
@@ -31,12 +31,12 @@ python tic_kids_analise_2025.py
 ✅ tic_kids_alunos_criticos.csv      (alunos em risco)
 ```
 
-## 📋 Requisitos
+##  Requisitos
 
 - Python 3.8+
 - pip
 
-## 📊 Dados Gerados
+##  Dados Gerados
 
 | Arquivo | Descrição |
 |---------|-----------|
@@ -46,7 +46,7 @@ python tic_kids_analise_2025.py
 | `tic_kids_dataset_completo.csv` | 2.500 respondentes |
 | `tic_kids_alunos_criticos.csv` | Alunos para intervenção |
 
-## 🎓 Análises Incluídas
+##  Análises Incluídas
 
 ✅ Estatísticas gerais  
 ✅ Exposição a riscos online (phishing, golpes, cyberbullying)  
@@ -61,7 +61,7 @@ python tic_kids_analise_2025.py
 ✅ Mapa de riscos por estado  
 ✅ Recomendações de ensino  
 
-## 📈 Resultados Esperados
+##  Resultados Esperados
 
 ```
 Conhecimento atual:       42/100
@@ -75,7 +75,7 @@ Alunos em risco:          5% (-13%)
 Taxa de golpe:            3% (-75%)
 ```
 
-## 🔧 Customizar
+##  Customizar
 
 Abra `tic_kids_analise_2025.py` e mude:
 
@@ -87,17 +87,13 @@ n_respondentes = 2500  # Mude para 5000, 1000, etc
 # (estados, faixas etárias, plataformas, etc)
 ```
 
-## 📚 Documentação
+##  Documentação
 
 - **README-SCRIPT-PYTHON.md** - Guia detalhado
 - **EXEMPLOS-AVANCADOS.md** - Casos de uso avançados
 - **DOCUMENTACAO.md** - Referência completa
 
-## 📄 Licença
-
-MIT
-
-## 🤝 Contribuir
+##  Contribuir
 
 Encontrou um bug? Tem uma ideia?  
 Abra uma [Issue](https://github.com/AlicySousaa/analise_dados_tic_2025/issues)
@@ -106,7 +102,6 @@ Abra uma [Issue](https://github.com/AlicySousaa/analise_dados_tic_2025/issues)
 
 - ✅ Python 3.8+
 - ✅ Production Ready
-- ✅ Totalmente documentado
 
 ---
 
